@@ -1,0 +1,152 @@
+/* Custom Styles For Scarlet Sails Hotel */
+/* Styles in this stylesheet target items that occur only on one specific page. */
+
+/* CSS Final Project by Mariia Gregory <----  YOUR NAME HERE */
+
+
+/* First 3 table rules below should probably be left alone, but some values can be adjusted as needed. */
+
+table#calendar { 
+	width: 98%;             /* change this table width as needed  */
+	margin-left: auto;      /* auto left and right margins centers the table since it has a width */
+	margin-right: auto;   
+	border-collapse: collapse; /* leave this alone unless you want the effect of cellspacing then change to "separate" */
+	border-spacing: 0px;       /* leave this alone unless you want the effect of cellspacing then change to what you want */
+}
+
+table#calendar td, table#calendar th { 
+	width: 14%;        /*  there are 7 days a week, so 7 * 14% = 98%, so leave this alone or tweak only slightly        */
+	padding: 0;        /*  adjust as needed to get more spacing inside events table cells (the effect of "cellpadding") */
+}
+
+table#calendar td { 
+	height:  4.75em;     /*  change this height for the calendar days as needed */
+	vertical-align: top; /* keeps text vertically aligned to the top of the cell (default is center)     */
+}
+
+/* 1. Events Page Calendar Styles: Create 5 or more calendar table related rules. These should not affect other tables!    
+   ==============================  5 required areas to style: table heading, weekdays, date #'s, empty days, & events.      
+                                   You can style the table itself too. Consider using backgrounds on some of these areas. */
+table#calendar {
+	outline-style: double;
+	outline-color: brown;
+}
+table#calendar td {
+	padding: 5px;
+	width: 14%;
+}
+table#calendar td.noday {
+	background-image: url(images/bg_noday.png);
+    background-size: contain; 
+	/*background-size: cover;*/
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-color: lightgray;
+}
+table#calendar .event {
+	font-weight: bold;
+	font-style: italic;
+}
+table#calendar td:nth-child(7n):not(.noday), table#calendar td:nth-child(7n+1):not(.noday) {
+	background:	rgba(200,5,80,.3);
+}
+table#calendar #weekdays th:first-child, table#calendar #weekdays th:last-child {
+	background:	rgba(200,5,80,.3);
+}
+table#calendar th {
+	font-family: 'Alex Brush', cursive, sans-serif; 
+	letter-spacing: 0.15em;
+	word-spacing: 0.1em;
+	font-size: 140%;
+}
+table#calendar th#monthYear {	
+	font-size: 200%;
+	border-bottom: maroon double;
+}
+table#calendar div.date {	
+	font-size: 110%;
+	font-family: serif;
+}
+
+/* 2. FAQ Page Question & Answer Styles: Style questions differently from answers so questions are easier to find,    
+   ====================================  question and answer pairs are grouped closer together vertically,          
+                                         and as a result the whole section is more visually pleasing.               */
+#faqpage .question {
+	font-style: italic;
+	font-weight: bold;
+}
+#faqpage .answer {
+	margin-left: 20px;
+	color: #333;
+}	
+#faqpage p.answer a:link, #faqpage p.answer a:visited {
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: dotted 1px brown;
+}
+#faqpage p.answer a:hover {
+	color: brown;
+}				 
+#faqpage h1 .headingtext {
+	letter-spacing: 0.07em;
+}
+
+/* 3. Services Page Image Styles: Use each figures' id to float left/right & give margin on the inner side to keep text away.       
+   =============================  Use images' class to give common border properties (use a border style other than "solid").   
+                                  Also set common text styling for the figcaptions, perhaps including center aligning.       */
+#servicespage .servicefig{
+	margin: 10px; 
+	border: 1px inset brown;
+	box-shadow: 5px 5px 4px #BDA58A;
+}
+#servicespage .servicefig  figcaption {
+	text-align: center;
+	font-weight: bold;
+	font-size: 85%;
+	padding: 2px;
+}
+#servicespage #roomservicefig {
+	float: left; 
+	margin-right: 20px; margin-left: 0px;
+	padding: 3px;
+	border-bottom-right-radius: 10px;
+}
+#servicespage #spafig {
+	float: right;
+	margin-left: 20px; margin-right: 0px;
+	padding: 3px;
+	border-bottom-left-radius: 10px;
+}
+/* Miscellaneous Styles: For any other styles for a single page that does not fit the above categories.  
+   ====================  Use only as needed. This section is optional and does not count for any points.    */
+
+#homepage #intro {
+	padding-top: 0;
+	width: 90%; /* It is wider than on all other pages because it has h2 header "Welcome",
+					and the paragraph doesn't need to fit the the "knot" background in width */
+}
+#hotelfig {
+	float: right;
+	margin-right: 10px;
+	border: double 3px maroon;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 10px 6px 8px #BDA58A;
+}
+#hotelfig figcaption {
+	text-align: center;
+	font-weight: bold;
+	font-size: 85%;
+}
+#reservationspage #primary li ul {
+	line-height: 1.5em;
+}
+#reservationspage #primary li li:first-child {
+	list-style-image: url(images/reservations_cash_30-20.png);
+}
+#reservationspage #primary li li:nth-child(2) {
+	list-style-image: url(images/reservations_visa_30-19.jpg);
+}
+#reservationspage #primary li li:last-child {
+	list-style-image: url(images/reservations_amExp_30-13.jpg);
+}

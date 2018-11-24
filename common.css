@@ -1,0 +1,261 @@
+@charset "utf-8";
+/* Common Styles for all pages of Scarlet Sails Hotel Web site */
+
+/* CSS Final Project by Mariia Gregory */
+/* 2-Column Fixed Width Centered Layout using Absolute & Relative Positioning */
+
+header, nav, section, footer, article {     /* leave this alone */
+	display: block;
+}
+
+/* 1. Page Styles: On the "body" you must at least set color, background, margin, padding, font family & size.    
+   ==============  Optionally, you can also set styles on the page wrapper div here if you like.  
+	               But note that you will lose points for any of the above properties that are not set for the body  */
+body {
+	margin: 0;
+	padding: 0;
+	color: black;
+	background: url(images/roof-950.png) no-repeat center top,
+				url(images/bg_body_left.jpg) no-repeat,
+				url(images/bg_body_right.jpg) no-repeat top right,
+				url(images/bg_body_center.jpg) repeat-x top center,
+				url(images/bg_body_water.jpg);
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+}
+
+/* 2. Header (Banner) Styles: For the top header area (which includes the h1) and should be treated as a banner area. 
+   =========================  Possible properties to use here include "background", "height", "padding", "margin",     
+                              and "border".  Feel free to use others instead. Use at least 2 properties.           */
+header {
+	margin: 0;
+	padding: 0.5em 10% 0.5em 0; /* 0.5em on the top and the bottom, 10% on the right, 0 on the left */
+	background: url(images/bg_header_corner_left_34.png) repeat-y, /* shadowy corners */
+				url(images/anchor_60.png) no-repeat 93% 0, 
+				url(images/bg_header.png); /* shadowy wall */
+	text-align: center;
+}
+
+/* 3. Heading Styles: For h1-h3 together, set font-family and color; for each separately set font-size using em or %.   
+   =================  Set other styles as needed. Goal is to make heading text stand out from other page text.   
+	                  One of your heading fonts must be an embedded Web font, so include those style rules here.  */                   
+.headingtext { 
+	font-family: 'Alex Brush', cursive, sans-serif; 
+	letter-spacing: 0.15em;
+	word-spacing: 0.1em;
+	text-shadow: 20px 9px 7px #BDA58A;
+}
+h2, h3, h4 {
+	margin-bottom: 0;
+	color: brown;
+}
+h1 { font-size: 300%; line-height: 0; letter-spacing: 0.5em; }
+h2 { font-size: 250%; text-align: center; }
+h3 { font-size: 200%; }
+h4 { font-size: 175%; }
+
+
+/* 4. Intro Paragraph Styles:  use at least 3 properties to emphasize 1st paragraph (intro article) 
+   =========================   */
+   
+#intro {
+	width: 73%; /* everywhere except Home page, see custom.css */
+	margin-left: auto; margin-right: auto;
+	padding-top: 35px; 
+	font-size: 105%;
+	font-style: italic;
+	letter-spacing: .1em; word-spacing: .1em;
+	color: brown;
+}
+#primary {
+	margin: .5em;
+}
+
+/* 5. Copyright Styles:  use at least 3 properties to de-emphasize the copyright paragraph (footer)  
+   ===================  */
+
+footer p {
+	text-align: center;
+	font-size: 80%;  
+	color: white;
+}
+footer a:link, footer a:visited {
+	color: white;
+}
+
+/* 6. General Link Styles: Style the links outside the nav bar area using at least color and text-decoration  
+   ======================  Write 4 separate rules to affect all 4 link states.  */
+a:link, a:visited {
+	text-decoration: none;
+	color: darkred;
+}
+a:active, a:hover {
+	text-decoration: underline;
+	color: navy;
+}
+
+/* 7. Navigation Bar Styles: Should affect only the nav bar links. Style nav, ul and its li's as needed.           
+   ========================  Style all 4 link states to make active buttons when hovering. Remove bullets from list display. 
+                             !!! Use selectors like "#eventspage #eventslink" to style the link to its own page separately      */ 
+nav ul {
+	list-style-type: none;
+	padding-top: 100px;  padding-left: 0;
+	margin-right: 10px; /* make a room on the right for the box-shadow */
+	background: url(images/bg_nav_seagull.png) no-repeat 70% 22px;
+}
+nav li {                      /* change background, adjust others as needed  */
+	margin-bottom: 15px;
+	text-align: center;
+	font-size: 130%;
+	line-height: 1.4;
+}
+nav a:link, nav a:visited {                       
+	display: block;
+	box-sizing: border-box; /* so the width includes paddings and borders */
+	width: 100%;	
+	padding: 5px 8px;
+	border: solid 1px brown;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #BDA58A;
+	background: linear-gradient(to bottom, white, #B87860 80%);	
+	text-decoration: none;  
+	color: #622615;
+}
+nav a:hover {
+	color: white;
+}
+nav a:active {
+	color: darkred;
+	border: none;
+	border: solid 1px #BDA58A;
+	box-shadow: none;
+	background: linear-gradient(to bottom, #BDA58A, white 60%, #B87860); 
+	/* this imitates "sunlight" redistribution when pushing a button */
+}
+#homepage #homelink:link, #homepage #homelink:visited,
+#servicespage #serviceslink:link, #servicespage #serviceslink:visited,
+#reservationspage #reservationslink:link, #reservationspage #reservationslink:visited,
+#contactpage #contactlink:link, #contactpage #contactlink:visited,
+#faqpage #faqlink:link, #faqpage #faqlink:visited,
+#eventspage #eventslink:link, #eventspage #eventslink:visited
+ {
+	background: linear-gradient(to bottom, white, rgb(105,157,214) 80%);
+	border: solid 1px rgb(105,157,214);	
+	color: rgb(36,82,132);
+}
+/* 8. General List Styles: For unordered lists outside of nav bar. Set 2 levels of bullet shapes & 2 levels of bullet images. 
+   ======================  Outer bullets should stand out more than inner bullets. Use Reservations & Contact pages to test. */
+#main ul li {
+	list-style-image: url(images/li_seagull.png);
+	line-height: 1.5em;	
+}
+#main ul ul li {
+	list-style-image: url(images/li_ul_flag_bullet.png);
+}
+
+/* 9. Testimonial Styles: At least 4 rules to style at least these 4 items: the surrounding testimonials article,    
+   =====================  the 3 testimonial divs, the quotes, and the speakers. Goals: Uniquely style testimonial section 
+	                       itself, emphasize quote, de-emphasize speaker name. Adjust vertical spacing between items.       */
+#testimonials {
+	margin-left: -150px;
+	margin-top: 30px;
+	width: 850px;
+	padding-top: 200px;
+	background: url(images/flower_maria.png) 8% 90px no-repeat,
+				url(images/window_side.png) 8% top no-repeat,
+				url(images/kitty.png) 88% 70px no-repeat,
+				url(images/window_side.png) 88% top no-repeat,
+				url(images/window_center.png) 48% top no-repeat,
+				url(images/small_ship.png) 48% 50px no-repeat,
+				url(images/bg_window_water.jpg) 48% top no-repeat;
+}
+#testimonials h3 {
+	margin-left: 160px;
+}
+.testimonial {
+	display: inline-block;
+	width: 230px;
+	margin: 10px; padding: 10px; padding-bottom: 5px;
+	border: maroon 1px solid;
+	box-shadow: 5px 5px 8px #BDA58A;
+	border-radius: 25px;
+	background-color: rgba(254,247,240,0.5);
+}
+.testimonial .quote {
+	font-style: italic;
+	font-size: 105%;
+}
+.testimonial .speaker {
+	text-align: right;
+	font-size: 95%;
+	line-height: 0.95em;
+}
+/* 10. Logo Positioning Styles: Absolute Positioning of logo image using "positionme" id. Leave the existing blank div at 
+   ===========================  bottom of each page in the html & style it to go toward the top of pages where you like.  
+	                            Give it a height & width to match logo image, set image as background, position absolutely */
+#positionme {
+	position: absolute;
+	width: 190px; height: 120px;
+	background: url(images/logo.png) no-repeat;
+	left: 5px; top: 5px;
+}
+
+/* 11. Multi-Column Layout Styles: Use of float, position, margin, and/or padding styles to create a multi-column layout.  
+   ==============================  For help with these styles, see the online "Final Project Layout Guide" handout.     
+	                               For some partial credit here you can use just the layout styles from A3P5              */
+#pagewrap {
+	width: 900px; 
+	margin-top: 153px; 
+	margin-left: auto;  margin-right: auto;  /* center on the screen */
+	background: url(images/bg_pagewrap_corner_left_34.png) repeat-y, /* white "house" corners */
+				url(images/bg_pagewrap_wall_repeatY.png) 33px 0 repeat-y; /* 33px from the left side, so there is empty space 
+																			 between white corners and body background */
+}
+nav {
+	float: left;
+	width: 200px; /* #pagewrap width - #main width */
+	box-sizing: border-box;
+	padding-left: 34px; /* to skip white break corners */	
+}
+#main { 
+	float: left;  /* it sticks to the left to "nav", and its background flows all over #pagewrap" area */
+	width: 700px; 
+	box-sizing: border-box;
+	padding: 10px; padding-bottom: 120px; /* 120px on the bottom and 10px everywhere else */
+	background: url(images/border_knot.gif) no-repeat 40% top,
+				url(images/border_knot_reverse.gif) no-repeat center 99%,
+				url(images/bg_main_repeatY.png);				
+}
+footer { 		
+	clear: left;
+	padding-top: 1.5em; padding-bottom: 0.1px; /* Don't know why, but only this way footer stretches to the bottom.
+												   Otherwise, body bg image appears below it */
+	padding-right: 100px; /* to leave enough room for wheel image */
+	background: url(images/wheel.png) no-repeat right 50%,
+				url(images/bg_footer_Green-Grass-28.png) repeat-x,
+				url(images/bg_footer.png); /* red bricks from PNG-house*/
+}
+
+/* 12. CSS3 Styles: Use of any CSS3 based properties, such as text and box shadows, rounded boxes, etc. See the final  
+   ===============  project assignment directions for links to CSS3 resources, including CSS3 code generators.
+                    The rules given in this section should not be copies of rules appearing in other sections. 
+						  Put only CSS 3 styles here, no other CSS styles should be here -- so if you are putting a text-shadow 
+						  on h1 headings, put just the shadow code here & the other font related CSS code in "headings" area.   
+						  Note: @font-face properties don't go here -- place them in the sections where the fonts are used.  
+						  Do not include any -webkit or -moz based browser properties.                                         */
+footer {
+	position: relative;
+}
+footer::after {
+	position: absolute;
+	height: 750px; width: 200px;
+	left: -95px; top:-735px; /* so it is placed on top of 'red bricks' background image and a bit outside to the left. */ 
+	overflow: visible; /* so no matter how far outside the block our background image is, it is always shown */
+	background: url(images/tree1.png) no-repeat right bottom;
+	content: ''; /* without this declaration, nothing is shown. */
+}
+/* Miscellaneous Styles: Styles that don't fit in any of the above categories but affect multiple pages can go here. 
+   ====================  Use only as needed. This section is optional and does not count for any points.                 */
+p {
+	margin-top: 5px;
+}
